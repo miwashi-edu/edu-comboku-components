@@ -7,6 +7,7 @@
 
 ```bash
 cd ~
+cd ws
 rm -rf gomoku-components
 mkdir gomoku-components
 cd gomoku-components
@@ -20,6 +21,8 @@ npx storybook init
 > We will however need to set bundler to webpack (not vite).
 
 ```bash
+cd ~
+cd ws
 rm -rf gomoku-components
 mkdir gomoku-components
 cd gomoku-components
@@ -32,7 +35,10 @@ npx storybook init
 ## Reorganize project to a more common structure.
 
 ```bash
-mkdir -p .src/components
+cd ~
+cd ws
+cd gomoku-components
+mkdir -p ./src/components
 mkdir ./src/components/Button
 mkdir ./src/components/Header
 mkdir ./src/components/Page
