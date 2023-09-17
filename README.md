@@ -42,15 +42,15 @@ mkdir -p ./src/components
 mkdir ./src/components/Button
 mkdir ./src/components/Header
 mkdir ./src/components/Page
-mv ./stories/Button.jsx ./src/Button/
-mv ./stories/putton.css ./src/Page/
-touch ./src/Page/index.js
-mv ./stories/Header.jsx ./src/Header/
-mv ./stories/header.css ./src/Header/
-touch ./src/Header/index.js
-mv ./stories/Page.jsx ./src/Page/
-mv ./stories/page.css ./src/Page/
-touch ./src/Page/index.js
+mv ./stories/Button.jsx ./src/components/Button/
+mv ./stories/button.css ./src/components/Button/
+touch ./src/components/Button/index.js
+mv ./stories/Header.jsx ./src/components/Header/
+mv ./stories/header.css ./src/components/Header/
+touch ./src/components/Header/index.js
+mv ./stories/Page.jsx ./src/components/Page/
+mv ./stories/page.css ./src/components/Page/
+touch ./src/components/Page/index.js
 mv ./stories ./src/stories
 ```js
 export {TextButton} from './components/TextButton'
@@ -61,4 +61,49 @@ export {default as TextButton} from "./TextButton"
 //for storybook
 export {default} from "./TextButton"
 ```
+
+### Edit ./storybook/main
+
+> We moved our stories, so now we need to tell storybook that stories are in ./src/stories not ./stories
+
+```js
+stories: [
+    "../stories/**/*.mdx",
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ]
+```
+**becomes**
+```js
+stories: [
+    "../src/stories/**/*.mdx",
+    "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ]
+```
+**restart storybook**
+```bash
+ctrl-c
+npm run storybook
+```
+
+### Edit imports for dependent ./src/components/Header/Header.jsx
+
+```js
+import { Button } from './Button';
+```
+**becomes**
+```js
+import { Button } from '../Button/Button';
+```
+
+### Edit imports for dependent ./src/components/Page/Page.jsx
+
+```js
+import { Button } from './Header';
+```
+**becomes**
+```js
+import { Button } from '../Header/Header';
+```
+
+
 
