@@ -92,18 +92,31 @@ import { Button } from './Button';
 ```
 **becomes**
 ```js
-import { Button } from '../Button/Button';
+import Button from '../Button/Button';
 ```
 
 ### Edit imports for dependent ./src/components/Page/Page.jsx
 
 ```js
-import { Button } from './Header';
+import { Header } from './Header';
 ```
 **becomes**
 ```js
-import { Button } from '../Header/Header';
+import Header from '../Header/Header';
 ```
+
+### Edit exports for dependent Button.jsx/Header.jsx/Page.jsx
+
+```js
+const export Page ...
+```
+**becomes**
+```js
+const Page ...
+...
+export default Page;
+```
+
 
 
 
