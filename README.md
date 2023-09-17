@@ -33,19 +33,19 @@ npx storybook init
 
 ```bash
 mkdir -p .src/components
-mkdir .src/components/Button
-mkdir .src/components/Header
-mkdir .src/components/Page
+mkdir ./src/components/Button
+mkdir ./src/components/Header
+mkdir ./src/components/Page
 mv ./stories/Button.jsx ./src/Button/
 mv ./stories/putton.css ./src/Page/
 touch ./src/Page/index.js
 mv ./stories/Header.jsx ./src/Header/
 mv ./stories/header.css ./src/Header/
 touch ./src/Header/index.js
-mv .stories/Page.jsx ./src/Page/
-mv .stories/page.css ./src/Page/
+mv ./stories/Page.jsx ./src/Page/
+mv ./stories/page.css ./src/Page/
 touch ./src/Page/index.js
-mv stories ./src/stories
+mv ./stories ./src/stories
 ```js
 export {TextButton} from './components/TextButton'
 
