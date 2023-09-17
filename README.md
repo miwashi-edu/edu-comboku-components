@@ -117,6 +117,19 @@ const Page ...
 export default Page;
 ```
 
+# Crete Gomoku
+
+```bash
+cd ~
+cd ws
+cd gomoku-components
+mkdir ./src/components/Gomoku
+touch ./src/components/Gomoku/Gomoku.jsx
+touch ./src/components/Gomoku/gomoku.css
+touch ./src/components/Gomoku/index.js
+touch ./src/stories/Gomoku.stories.js
+```
+
 
 
 
