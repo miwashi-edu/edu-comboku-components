@@ -130,6 +130,84 @@ touch ./src/components/Gomoku/index.js
 touch ./src/stories/Gomoku.stories.js
 ```
 
+## ./src/components/Gomoku.jsx
 
+```js
+import React,{ useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import './gomoku.css';
+
+const Gomoku = ({ width, height, tileWidth, ...props }) => {
+    const canvasRef = useRef(null);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = width * tileWidth;
+        canvas.height = height * tileWidth;
+
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(0, 0, width *tileWidth, height * tileWidth);
+    }, [width, height]);
+
+    return (
+        <canvas ref={canvasRef}></canvas>
+    );
+};
+
+Gomoku.propTypes = {
+    width: PropTypes.number,
+    height: PropTypes.number,
+    tileWidth: PropTypes.number,
+};
+
+Gomoku.defaultProps = {
+    width: 16,
+    height: 16,
+    tileWidth: 10,
+};
+
+export default Gomoku;
+```
+
+## ./src/components/gomoku.css
+
+```js
+```
+
+## ./src/components/index.js
+
+```js
+//for bundling
+export {default as Gomoku} from "./Gomoku"
+
+//for storybook
+export {default} from "./Gomoku"
+```
+
+## ./src/stories/Gomoku.stories.js
+
+```js
+import {Gomoku} from "../components/Gomoku";
+
+export default {
+    title: 'Gomoku/Gomoku',
+    component: Gomoku,
+    parameters: {layout: 'centered',},
+    tags: ['autodocs'],
+    argTypes: {
+
+    },
+};
+
+export const Normal = {
+    args: {
+        width: 16,
+        height: 16,
+        tileWidth: 20,
+    },
+};
+```
 
 
