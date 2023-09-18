@@ -52,14 +52,6 @@ mv ./stories/Page.jsx ./src/components/Page/
 mv ./stories/page.css ./src/components/Page/
 touch ./src/components/Page/index.js
 mv ./stories ./src/stories
-```js
-export {TextButton} from './components/TextButton'
-
-//for bundling
-export {default as TextButton} from "./TextButton" 
-
-//for storybook
-export {default} from "./TextButton"
 ```
 
 ### Edit ./storybook/main
