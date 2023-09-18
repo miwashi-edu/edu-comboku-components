@@ -42,16 +42,16 @@ mkdir -p ./src/components
 mkdir ./src/components/Button
 mkdir ./src/components/Header
 mkdir ./src/components/Page
-mv ./stories/Button.jsx ./src/components/Button/
-mv ./stories/button.css ./src/components/Button/
+mv ./src/stories/Button.jsx ./src/components/Button/
+mv ./src/stories/button.css ./src/components/Button/
 touch ./src/components/Button/index.js
-mv ./stories/Header.jsx ./src/components/Header/
-mv ./stories/header.css ./src/components/Header/
+mv ./src/stories/Header.jsx ./src/components/Header/
+mv ./src/stories/header.css ./src/components/Header/
 touch ./src/components/Header/index.js
-mv ./stories/Page.jsx ./src/components/Page/
-mv ./stories/page.css ./src/components/Page/
+mv ./src/stories/Page.jsx ./src/components/Page/
+mv ./src/stories/page.css ./src/components/Page/
 touch ./src/components/Page/index.js
-mv ./stories ./src/stories
+#mv ./stories ./src/stories
 ```
 
 ### Edit ./storybook/main
