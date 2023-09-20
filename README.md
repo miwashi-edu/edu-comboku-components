@@ -15,7 +15,7 @@ touch ./src/components/Gomoku/index.js
 touch ./src/stories/Gomoku.stories.js
 
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Gomoku.jsx -o ./src/components/Gomoku/Gomoku.jsx
-curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/src_gomoku_index.js -o ./src/components/Gomoku/index.jsx
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/src_gomoku_index.js -o ./src/components/Gomoku/index.js
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Gomoku.stories.js -o ./src/stories/Gomoku.stories.js
 ```
 
