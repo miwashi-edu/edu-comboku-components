@@ -22,7 +22,16 @@ mv ./stories/Page.jsx ./src/components/Page/
 mv ./stories/page.css ./src/components/Page/
 touch ./src/components/Page/index.js
 mv ./stories ./src/stories
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_button.js -o ./src/components/Button/index.js
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_header.js -o ./src/components/Header/index.js
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_page.js -o ./src/components/Page/index.js
+
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Button.jsx -o ./src/components/Button/Button.jsx
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Header.jsx -o ./src/components/Header/Header.jsx
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Page.jsx -o ./src/components/Page/Page.jsx
 ```
+
+## Explanations to edited files
 
 ### Edit ./storybook/main.js
 
