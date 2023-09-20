@@ -23,7 +23,7 @@ mv ./stories/page.css ./src/components/Page/
 touch ./src/components/Page/index.js
 mv ./stories ./src/stories
 
-curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/main.js -o ./storybook/main.js
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/main.js -o ./.storybook/main.js
 
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_button.js -o ./src/components/Button/index.js
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_header.js -o ./src/components/Header/index.js
