@@ -1,6 +1,8 @@
 # edu-gomoku-components
 
-## Reorganize project to a more common structure.
+> We reorganize the structure so that components are under .src/components as directories with index.js, Component.jsx and component.css.
+
+## Instructions
 
 ```bash
 cd ~
@@ -72,32 +74,25 @@ import { Header } from './Header';
 import Header from '../Header/Header';
 ```
 
-### Edit Button.jsx/Header.jsx/Page.jsx
+### Change exports for Button.jsx, Header.jsx and Page.jsx
+
+**remove exports after const***
 
 ```js
+const export Button ...
+//or
+const export Header ...
+//or
 const export Page ...
 ```
-**becomes**
+**add the exports to the end of the files**
+
 ```js
-const Page ...
-...
 export default Page;
-```
-
-# Crete Gomoku
-
-```bash
-cd ~
-cd ws
-cd gomoku-components
-mkdir ./src/components/Gomoku
-touch ./src/components/Gomoku/Gomoku.jsx
-touch ./src/components/Gomoku/gomoku.css
-touch ./src/components/Gomoku/index.js
-touch ./src/stories/Gomoku.stories.js
-curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Gomoku.jsx -o ./src/components/Gomoku/Gomoku.jsx
-curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Gomoku.stories.js -o ./src/stories/Gomoku.stories.js
-curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/src_gomoku_index.js -o ./src/components/Gomoku/index.js
+//or
+export default Page;
+//or
+export default Page;
 ```
 
 ## Restart storybook
