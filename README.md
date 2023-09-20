@@ -1,37 +1,5 @@
 # edu-gomoku-components
 
-## Create React Project
-
-> Storybook needs to identify what type of project is intended.
-> We create a react application before we run storybook init.
-
-```bash
-cd ~
-cd ws
-rm -rf gomoku-components
-mkdir gomoku-components
-cd gomoku-components
-npx create-react-app .
-npx storybook init
-```
-
-## Create project with npm
-> We install react, and reac-dom, that is enought to identify the project and
-> as we don't need all files from a react application that suffise.
-> We will however need to set bundler to webpack (not vite).
-
-```bash
-cd ~
-cd ws
-rm -rf gomoku-components
-mkdir gomoku-components
-cd gomoku-components
-mkdir public
-npm init -y
-npm install react react-dom
-npx storybook init
-```
-
 ## Reorganize project to a more common structure.
 
 ```bash
@@ -58,6 +26,10 @@ touch ./src/components/Page/index.js
 
 > We moved our stories, so now we need to tell storybook that stories are in ./src/stories not ./stories
 
+```bash
+vi ./storybook/main
+```
+
 ```js
 stories: [
     "../stories/**/*.mdx",
@@ -71,13 +43,12 @@ stories: [
     "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ]
 ```
-**restart storybook**
-```bash
-ctrl-c
-npm run storybook
-```
 
 ### Edit imports for dependent ./src/components/Header/Header.jsx
+
+```bash
+./src/components/Header/Header.jsx
+```
 
 ```js
 import { Button } from './Button';
@@ -87,7 +58,11 @@ import { Button } from './Button';
 import Button from '../Button/Button';
 ```
 
-### Edit imports for dependent ./src/components/Page/Page.jsx
+### Edit ./src/components/Page/Page.jsx
+
+```bash
+./src/components/Header/Page.jsx
+```
 
 ```js
 import { Header } from './Header';
@@ -97,7 +72,7 @@ import { Header } from './Header';
 import Header from '../Header/Header';
 ```
 
-### Edit exports for dependent Button.jsx/Header.jsx/Page.jsx
+### Edit Button.jsx/Header.jsx/Page.jsx
 
 ```js
 const export Page ...
@@ -120,134 +95,13 @@ touch ./src/components/Gomoku/Gomoku.jsx
 touch ./src/components/Gomoku/gomoku.css
 touch ./src/components/Gomoku/index.js
 touch ./src/stories/Gomoku.stories.js
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Gomoku.jsx -o ./src/components/Gomoku/Gomoku.jsx
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Gomoku.stories.js -o ./src/stories/Gomoku.stories.js
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/src_gomoku_index.js -o ./src/components/Gomoku/index.js
 ```
 
-## ./src/components/Gomoku.jsx
-
-```js
-import React,{ useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import './gomoku.css';
-
-const Gomoku = ({ width, height, tileWidth, ...props }) => {
-    const canvasRef = useRef(null);
-
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = width * tileWidth;
-        canvas.height = height * tileWidth;
-
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(0, 0, width *tileWidth, height * tileWidth);
-    }, [width, height]);
-
-    return (
-        <canvas ref={canvasRef}></canvas>
-    );
-};
-
-Gomoku.propTypes = {
-    width: PropTypes.number,
-    height: PropTypes.number,
-    tileWidth: PropTypes.number,
-};
-
-Gomoku.defaultProps = {
-    width: 16,
-    height: 16,
-    tileWidth: 10,
-};
-
-export default Gomoku;
-```
-
-## ./src/components/gomoku.css
-
-```js
-```
-
-## ./src/components/index.js
-
-```js
-//for bundling
-export {default as Gomoku} from "./Gomoku"
-
-//for storybook
-export {default} from "./Gomoku"
-```
-
-## ./src/stories/Gomoku.stories.js
-
-```js
-import {Gomoku} from "../components/Gomoku";
-
-export default {
-    title: 'Gomoku/Gomoku',
-    component: Gomoku,
-    parameters: {layout: 'centered',},
-    tags: ['autodocs'],
-    argTypes: {
-
-    },
-};
-
-export const Normal = {
-    args: {
-        width: 16,
-        height: 16,
-        tileWidth: 20,
-    },
-};
-```
-## rollup.config.js
+## Restart storybook
 
 ```bash
-npm install --save-dev rollup
-npm install --save-dev rollup-plugin-node-resolve
-npm install --save-dev rollup-plugin-commonjs
-npm install --save-dev rollup-plugin-babel
-npm install --save-dev babel-preset-env
+npm run storybook
 ```
-
-## rollup.config.js
-
-```js
-import babel from '@rollup/plugin-babel';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
-import pkg from './package.json' assert { type: "json" };
-
-export default {
-    input:'src/index.js',
-    output: [
-        { file: pkg.main, format: 'cjs' },
-        { file: pkg.module, format: 'es', exports: 'named'}
-    ],
-    plugins: [
-        babel({
-            babelHelpers: 'bundled',
-            exclude: 'node_modules/**',
-            presets: ['@babel/preset-env','@babel/preset-react']
-          }),
-          resolve({
-            extensions: ['.js', '.jsx'],
-            dedupe: ['prop-types']
-          }),
-          commonjs(),
-          terser()
-    ],
-    external: Object.keys(pkg.peerDependencies)
-  };
-```
-
-```bash
-# Bundle
-npx rollup -c rollup.config.js
-
-# Publish!
-npm publish
-```
-
