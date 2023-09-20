@@ -31,6 +31,12 @@ curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Page.jsx -o ./src/components/Page/Page.jsx
 ```
 
+## Restart storybook
+
+```bash
+npm run storybook
+```
+
 ## Explanations to edited files
 
 ### Edit ./storybook/main.js
@@ -102,10 +108,4 @@ export default Page;
 export default Page;
 //or
 export default Page;
-```
-
-## Restart storybook
-
-```bash
-npm run storybook
 ```
