@@ -22,6 +22,9 @@ mv ./stories/Page.jsx ./src/components/Page/
 mv ./stories/page.css ./src/components/Page/
 touch ./src/components/Page/index.js
 mv ./stories ./src/stories
+
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/main.js -o ./storybook/main.js
+
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_button.js -o ./src/components/Button/index.js
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_header.js -o ./src/components/Header/index.js
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/index_page.js -o ./src/components/Page/index.js
@@ -29,6 +32,11 @@ curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Button.jsx -o ./src/components/Button/Button.jsx
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Header.jsx -o ./src/components/Header/Header.jsx
 curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Page.jsx -o ./src/components/Page/Page.jsx
+
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Button.stories.js -o ./src/stories/Button.stories.js
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Header.stories.js -o ./src/stories/Header.stories.js
+curl -L https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/Page.stories.js -o ./src/stories/Page.stories.js
+
 ```
 
 ## Restart storybook
