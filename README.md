@@ -47,7 +47,7 @@ stories: [
 ### Edit imports for dependent ./src/components/Header/Header.jsx
 
 ```bash
-./src/components/Header/Header.jsx
+vi ./src/components/Header/Header.jsx
 ```
 
 ```js
@@ -61,7 +61,7 @@ import Button from '../Button/Button';
 ### Edit ./src/components/Page/Page.jsx
 
 ```bash
-./src/components/Header/Page.jsx
+vi ./src/components/Header/Page.jsx
 ```
 
 ```js
