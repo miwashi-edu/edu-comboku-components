@@ -5,6 +5,7 @@
   "player": 1,
   "player1": null,
   "player2": null,
+  "state": "new",
   "board": {
     "minInRow": 5,
     "cols": 16,
