@@ -3,7 +3,6 @@
 > Vi avslutar separation of concern. Gomoku har nu ansvaret för nätverksanrop,
 > Board har ansvaret för att rita.
 >
-> Vi lägger till 
 
 ## ./src/components/Gomoku.jsx
 
