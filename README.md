@@ -69,14 +69,14 @@ export default {
 mkdir ./src/images
 curl https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/black.png -o ./src/images/black.png
 curl https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/resources/white.png -o ./src/images/white.png
-
 ```
 
 ## Testa att bilder fungerar
 
-
 ./src/components/Gomoku/Gomoku.jsx
-´´´js
+
+```js
+
 ...
 import black from '../../images/black.png';
 import white from '../../images/white.png';
@@ -90,12 +90,14 @@ return (
     </div>
 );
 ...
+
 ```
 
 ## Bygg och konsumera i annan app.
 
 ```bash
+npm version major
 npm run build
-npm puclish --access public
+npm publish --access public
 ```
 
