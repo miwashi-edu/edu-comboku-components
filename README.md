@@ -1,6 +1,9 @@
 # edu-gomoku-components
 
-> Vi lägger till testdata och fortsätter separation of concern.
+> Vi avslutar separation of concern. Gomoku har nu ansvaret för nätverksanrop,
+> Board har ansvaret för att rita.
+>
+> Vi lägger till 
 
 ## ./src/components/Gomoku.jsx
 
@@ -77,7 +80,28 @@ export default {
     },
 };
 
-export const Normal = {
+export const EmtpyGame = {
+    args: {
+        url: "http://localhost:3001/api/game/games/015cdc04-4d22-46f7-8d8e-f1879bb9bf1b",
+        apiKey: "",
+    },
+};
+
+export const FullGame = {
+    args: {
+        url: "http://localhost:3001/api/game/games/015cdc04-4d22-46f7-8d8e-f1879bb9bf1b",
+        apiKey: "",
+    },
+};
+
+export const WhiteGame = {
+    args: {
+        url: "http://localhost:3001/api/game/games/015cdc04-4d22-46f7-8d8e-f1879bb9bf1b",
+        apiKey: "",
+    },
+};
+
+export const BlackGame = {
     args: {
         url: "http://localhost:3001/api/game/games/015cdc04-4d22-46f7-8d8e-f1879bb9bf1b",
         apiKey: "",
