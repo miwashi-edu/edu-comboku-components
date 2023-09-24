@@ -13,7 +13,7 @@ cd gomoku-components
 ```bash
 mkdir ./src/components/Board
 cp ./src/components/Gomoku/Gomoku.jsx ./src/components/Board/Board.jsx
-cp ./src/components/Gomoku/Gomoku.css ./src/components/Board/board.css
+cp ./src/components/Gomoku/gomoku.css ./src/components/Board/board.css
 cp ./src/components/Gomoku/Gomoku.js ./src/components/Board/index.js
 cp ./src/stories/Gomoku.stories.js ./src/stories/Board.stories.js
 
