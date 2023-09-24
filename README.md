@@ -72,5 +72,30 @@ curl https://raw.githubusercontent.com/miwashi-edu/edu-gomoku-components/main/re
 
 ```
 
+## Testa att bilder fungerar
 
+
+./src/components/Gomoku/Gomoku.jsx
+´´´js
+...
+import black from '../../images/black.png';
+import white from '../../images/white.png';
+...
+return (
+    <div>
+        <canvas ref={canvasRef}></canvas>
+
+        <img src={black} alt="Black Tile" />
+        <img src={white} alt="White Tile" />
+    </div>
+);
+...
+```
+
+## Bygg och konsumera i annan app.
+
+```bash
+npm run build
+npm puclish --access public
+```
 
