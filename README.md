@@ -23,6 +23,7 @@ const Gomoku = ({ url, apiKey }) => {
             const response = await fetch(apiUrl, {
               headers: {
                 Authorization: `Bearer ${apiKey}`,
+                'X-Jsio-Token': apiKey,
               },
             });
     
