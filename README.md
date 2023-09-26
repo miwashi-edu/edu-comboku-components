@@ -52,7 +52,7 @@ npm run storybook
 > We moved our stories, so now we need to tell storybook that stories are in ./src/stories not ./stories
 
 ```bash
-vi ./storybook/main.js
+vi ./.storybook/main.js
 ```
 
 ```js
