@@ -38,7 +38,10 @@ const Gomoku = ({ cols, rows, tileSize, ...props }) => {
     }, [cols, rows]);
 
     return (
-        <canvas ref={canvasRef}></canvas>
+        return (
+            <canvas ref={canvasRef} width={cols * tileSize} height={rows * tileSize}></canvas>
+        );
+
     );
 };
 
@@ -75,24 +78,24 @@ EOF
 
 ```bash
 cat > ./src/stories/Gomoku.stories.js << EOF
+import React from 'react';
 import {Gomoku} from "../components/Gomoku";
 
 export default {
     title: 'Gomoku/Gomoku',
     component: Gomoku,
     parameters: {layout: 'centered',},
-    tags: ['autodocs'],
     argTypes: {
-
     },
 };
 
-export const Normal = {
-    args: {
-        cols: 16,
-        rows: 16,
-        tileSize: 20,
-    },
+const Template = (args) => <Gomoku {...args} />;
+
+export const Normal = Template.bind({});
+Normal.args = {
+    cols: 16,
+    rows: 16,
+    tileSize: 20,
 };
 EOF
 ```
