@@ -38,7 +38,6 @@ const Gomoku = ({ cols, rows, tileSize, ...props }) => {
     }, [cols, rows]);
 
     return (
-        return (
             <canvas ref={canvasRef} width={cols * tileSize} height={rows * tileSize}></canvas>
         );
 
